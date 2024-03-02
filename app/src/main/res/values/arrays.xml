@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="product_categories">
+        <item>Category</item>
+        <item>Chair</item>
+        <item>Cupboard</item>
+        <item>Table</item>
+        <item>Accessory</item>
+        <item>Furniture</item>
+    </string-array>
+</resources>

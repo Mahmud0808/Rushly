@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.fragments.adminpanel.NewProductFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarNewProduct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageNewProductClose"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/icon_background_round"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/semi_black"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="@string/add_new_product"
+                android:textColor="@color/semi_black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageNewProductClose"
+                app:layout_constraintStart_toEndOf="@id/imageNewProductClose"
+                app:layout_constraintTop_toTopOf="@+id/imageNewProductClose" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedSrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarNewProduct">
+
+        <LinearLayout
+            android:id="@+id/productsInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_thin"
+                android:text="@string/product_general_information"
+                android:textColor="@color/semi_black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edName"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="12dp"
+                android:textSize="14sp"
+                tools:ignore="Autofill" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="@dimen/buttonCorners"
+                app:cardElevation="0dp">
+
+                <Spinner
+                    android:id="@+id/spinnerCategory"
+                    style="@style/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:paddingVertical="2dp"
+                    android:textSize="14sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/edDescription"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start|top"
+                android:hint="@string/product_description_summary"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:maxLines="8"
+                android:minLines="5"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="12dp"
+                android:scrollbars="vertical"
+                android:textSize="14sp"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/edPrice"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center"
+                android:hint="@string/price"
+                android:inputType="numberDecimal"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="12dp"
+                android:textSize="14sp"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/edOfferPercentage"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center"
+                android:hint="@string/offer_percentage_summary"
+                android:inputType="numberDecimal"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="12dp"
+                android:textSize="14sp"
+                tools:ignore="Autofill" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_thin"
+                android:text="@string/product_details"
+                android:textColor="@color/semi_black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edSizes"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center"
+                android:hint="@string/sizes_summary"
+                android:inputType="text"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="12dp"
+                android:textSize="14sp"
+                tools:ignore="Autofill" />
+
+            <FrameLayout
+                android:id="@+id/layoutSpecialProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background"
+                android:paddingStart="10dp">
+
+                <CheckBox
+                    android:id="@+id/checkBoxSpecialProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/special_product"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutColorPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <TextView
+                    android:id="@+id/tvSelectedColors"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginVertical="4dp"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:text="@string/none"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonColorPicker"
+                    style="@style/blueButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:minHeight="0dp"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/colors"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutImagePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <TextView
+                    android:id="@+id/tvSelectedImages"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginVertical="4dp"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:text="@string/none"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonImagePicker"
+                    style="@style/blueButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:minHeight="0dp"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/images"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                android:id="@+id/buttonAddProduct"
+                style="@style/blueButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="@string/add_product"
+                app:spinning_bar_color="@color/white" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

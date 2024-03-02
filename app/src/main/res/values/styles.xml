@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="h2">
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:textColor">@color/g_gray700</item>
+        <item name="android:textSize">@dimen/h2TextSize</item>
+    </style>
+
+    <style name="h3">
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/h3TextSize</item>
+    </style>
+
+    <style name="h4">
+        <item name="android:fontFamily">@font/poppins_thin</item>
+        <item name="android:textColor">@color/g_black</item>
+        <item name="android:textSize">@dimen/h4TextSize</item>
+    </style>
+
+    <style name="blueButtonStyle">
+        <item name="android:background">@drawable/blue_background</item>
+        <item name="android:fontFamily">@font/poppins_thin</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/h2TextSize</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="whiteButtonStyle">
+        <item name="android:background">@drawable/white_background</item>
+        <item name="android:fontFamily">@font/poppins_thin</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/h2TextSize</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="editText">
+        <item name="android:background">@drawable/white_background</item>
+        <item name="android:gravity">center</item>
+        <item name="singleLine">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog</item>
+    </style>
+
+    <style name="tabLayout_text" parent="TextAppearance.Design.Tab">
+        <item name="fontFamily">@font/sf_pro_display</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MediumTextViewThin">
+        <item name="android:textColor">#4b4f60</item>
+        <item name="android:textSize">15sp</item>
+        <item name="fontFamily">@font/sf_pro_display</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

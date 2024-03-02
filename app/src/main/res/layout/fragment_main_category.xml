@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.categories.MainCategoryFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollMainCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/layoutSpecialProducts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSpecialProducts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:minHeight="130dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="54dp"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/shimmerSpecialProducts"
+                    layout="@layout/shimmer_special_product" />
+
+            </FrameLayout>
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressbarSpecialProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="#CED5DC"
+                app:indicatorDirectionCircular="clockwise"
+                app:indicatorInset="4dp"
+                app:indicatorSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@id/layoutSpecialProducts"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/layoutSpecialProducts"
+                app:trackColor="@color/transparent"
+                app:trackCornerRadius="5dp"
+                app:trackThickness="3dp" />
+
+            <TextView
+                android:id="@+id/tvBestDeals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_thin"
+                android:text="@string/best_deals"
+                android:textColor="@color/semi_black"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutSpecialProducts" />
+
+            <FrameLayout
+                android:id="@+id/layoutBestDealsProducts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/layoutSpecialProducts"
+                app:layout_constraintTop_toBottomOf="@id/tvBestDeals">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBestDealsProducts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:minHeight="100dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="54dp"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/shimmerBestDealsProducts"
+                    layout="@layout/shimmer_best_deals" />
+
+            </FrameLayout>
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressbarBestDealsProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="#CED5DC"
+                app:indicatorDirectionCircular="clockwise"
+                app:indicatorInset="4dp"
+                app:indicatorSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@id/layoutBestDealsProducts"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/layoutBestDealsProducts"
+                app:trackColor="@color/transparent"
+                app:trackCornerRadius="5dp"
+                app:trackThickness="3dp" />
+
+            <TextView
+                android:id="@+id/tvBestProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_thin"
+                android:text="@string/best_products"
+                android:textColor="@color/semi_black"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@id/layoutSpecialProducts"
+                app:layout_constraintTop_toBottomOf="@id/layoutBestDealsProducts" />
+
+            <FrameLayout
+                android:id="@+id/layoutBestProducts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBestProducts"
+                app:layout_constraintVertical_bias="0">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBestProducts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingHorizontal="15dp"
+                    android:paddingBottom="54dp"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/shimmerBestProducts"
+                    layout="@layout/shimmer_product" />
+
+            </FrameLayout>
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressbarBestProducts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="#CED5DC"
+                app:indicatorDirectionCircular="clockwise"
+                app:indicatorInset="4dp"
+                app:indicatorSize="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/layoutBestProducts"
+                app:layout_constraintStart_toStartOf="@id/layoutBestProducts"
+                app:trackColor="@color/transparent"
+                app:trackCornerRadius="5dp"
+                app:trackThickness="3dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="3dp"
+    android:background="@color/g_card_background"
+    android:padding="16dp"
+    app:elevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/imgProduct"
+            android:layout_width="114dp"
+            android:layout_height="108dp"
+            android:background="@drawable/shimmer_view_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linear_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/imgProduct"
+            app:layout_constraintStart_toStartOf="@id/imgProduct"
+            app:layout_constraintTop_toBottomOf="@id/imgProduct">
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shimmer_view_background"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/semi_black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/ivProductFavorite"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shimmer_view_background" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvProductNewPrice"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/shimmer_view_background"
+            android:fontFamily="@font/sf_pro_display"
+            android:textColor="@color/semi_black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imgProduct"
+            app:layout_constraintTop_toBottomOf="@id/linear_product_name" />
+
+        <TextView
+            android:id="@+id/tvProductOldPrice"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="3dp"
+            android:alpha="0.7"
+            android:background="@drawable/shimmer_view_background"
+            android:fontFamily="@font/sf_pro_display"
+            android:textColor="@color/g_gray700"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvProductNewPrice"
+            app:layout_constraintTop_toBottomOf="@id/linear_product_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

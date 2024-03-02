@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingEnd="4dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageShadow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:alpha="0.4"
+        android:src="@color/g_blue"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageColor"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@color/g_blue"
+        app:layout_constraintBottom_toBottomOf="@id/imageShadow"
+        app:layout_constraintEnd_toEndOf="@id/imageShadow"
+        app:layout_constraintStart_toStartOf="@id/imageShadow"
+        app:layout_constraintTop_toTopOf="@id/imageShadow" />
+
+    <ImageView
+        android:id="@+id/imagePicked"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_picked"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/imageColor"
+        app:layout_constraintEnd_toEndOf="@id/imageColor"
+        app:layout_constraintStart_toStartOf="@id/imageColor"
+        app:layout_constraintTop_toTopOf="@id/imageColor"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
