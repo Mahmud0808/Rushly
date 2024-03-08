@@ -9,6 +9,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUiSaveStateControl
 import androidx.navigation.ui.setupWithNavController
 import com.drdisagree.rushly.R
 import com.drdisagree.rushly.databinding.ActivityShoppingBinding
@@ -30,34 +32,29 @@ class ShoppingActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<CartViewModel>()
 
+    @OptIn(NavigationUiSaveStateControl::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         binding.apply {
             val navController = findNavController(R.id.shoppingHostFragment)
-            bottomNavigation.setupWithNavController(navController)
+            bottomNavigation.apply {
+                setupWithNavController(navController)
+                setOnItemSelectedListener {
+                    NavigationUI.onNavDestinationSelected(it, navController, false)
+                    true
+                }
+            }
 
             navController.addOnDestinationChangedListener { _, destination, _ ->
                 when (destination.id) {
-                    R.id.homeFragment -> {
-                        bottomNavigation.visibility = BottomNavigationView.VISIBLE
-                    }
-
-                    R.id.searchFragment -> {
-                        bottomNavigation.visibility = BottomNavigationView.VISIBLE
-                    }
-
-                    R.id.cartFragment -> {
-                        bottomNavigation.visibility = BottomNavigationView.VISIBLE
-                    }
-
-                    R.id.profileFragment -> {
-                        bottomNavigation.visibility = BottomNavigationView.VISIBLE
+                    R.id.productDetailsFragment -> {
+                        bottomNavigation.visibility = BottomNavigationView.GONE
                     }
 
                     else -> {
-                        bottomNavigation.visibility = BottomNavigationView.GONE
+                        bottomNavigation.visibility = BottomNavigationView.VISIBLE
                     }
                 }
             }
